@@ -67,7 +67,7 @@ services:
         condition: service_healthy
       horizon:
         condition: service_started
-
+ 
 
   caddy:
     image: caddy:2-alpine
@@ -75,7 +75,9 @@ services:
     depends_on:
       app:
         condition: service_started
-
+    ports:
+      - 80:80
+      - 443:443
     volumes:
       - ./docker/Caddyfile:/etc/caddy/Caddyfile
       - storage:/usr/share/caddy/html/storage:rw
@@ -89,7 +91,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 3
-
+ 
 
   db:
     image: postgres:17-alpine
@@ -107,6 +109,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+ 
 
 
   redis:
@@ -126,9 +129,14 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+ 
 
 volumes:
   db-data:
   redis-data:
   storage:
   public:
+  caddy_data:
+  caddy_config:
+
+ 
