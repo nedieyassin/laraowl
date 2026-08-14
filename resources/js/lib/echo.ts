@@ -6,7 +6,10 @@ if (typeof window !== 'undefined') {
 
     if (reverbAppKey) {
         window.Pusher = Pusher;
-       // echo
+
+        console.log(import.meta.env.VITE_REVERB_HOST);
+
+        // echo
         window.Echo = new Echo({
             broadcaster: 'reverb',
             key: reverbAppKey,
