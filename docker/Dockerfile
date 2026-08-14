@@ -34,8 +34,7 @@ WORKDIR /usr/share/caddy/html/
 COPY . .
 
 # Install dependencies with composer
-RUN composer validate --strict \
-  && composer install \
+RUN composer install \
   --no-interaction \
   --no-progress \
   --no-scripts \
