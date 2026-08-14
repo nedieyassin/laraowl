@@ -84,7 +84,7 @@ services:
     env_file:
       - .env
     healthcheck:
-      test: ["CMD", "wget", "--no-check-certificate", "--quiet", "--spider", "https://localhost/"]
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost/"]
       interval: 10s
       timeout: 5s
       retries: 3
