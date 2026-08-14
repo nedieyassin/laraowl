@@ -6,7 +6,7 @@ if (typeof window !== 'undefined') {
 
     if (reverbAppKey) {
         window.Pusher = Pusher;
-
+       // echo
         window.Echo = new Echo({
             broadcaster: 'reverb',
             key: reverbAppKey,
