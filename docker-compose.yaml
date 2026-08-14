@@ -82,9 +82,7 @@ services:
     depends_on:
       app:
         condition: service_started
-    ports:
-      - 80:80
-      - 443:443
+  
     volumes:
       - ./docker/Caddyfile:/etc/caddy/Caddyfile
       - storage:/usr/share/caddy/html/storage:rw
