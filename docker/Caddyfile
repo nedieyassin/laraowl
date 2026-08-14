@@ -2,7 +2,7 @@
         auto_https off
 }
 
-{$APP_HOSTNAME}, {$APP_HOSTNAME_WS} {
+{$APP_HOSTNAME}:80, {$APP_HOSTNAME_WS}:80 {
         root * /usr/share/caddy/html/public
         header {
                 X-Xss-Protection "1; mode=block"
